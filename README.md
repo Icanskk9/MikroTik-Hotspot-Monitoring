@@ -29,7 +29,7 @@ Terima kasih sebesar-besarnya kepada:
 Jika proyek ini membantu pekerjaan atau manajemen jaringan kamu, dukungan secangkir kopi sangat berarti untuk terus mengembangkan fitur-fitur berikutnya:
 
 <p align="center">
-  <img src="assets/qr-coffee.png" width="230" alt="QR Buy Me a Coffee" />
+  <img src="mikhmon/assets/qr-coffee.png" width="230" alt="QR Buy Me a Coffee" />
   <br />
   <sub>Scan QR di atas untuk dukungan <b>Buy Me a Coffee</b> 🙏</sub>
 </p>
