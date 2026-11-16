@@ -11,7 +11,7 @@ PASSWORD DEFAULT : username : admin password admin123
 
 Silakan baca atau unduh dokumen panduan lengkap mengenai cara instalasi, konfigurasi MikroTik, serta penggunaan fitur di bawah ini:
 
-👉 **[📥 Buka / Download File Panduan Lengkap (PDF)](./Panduan penggunaan MikroTik Hotspot Monitoring.pdf)**
+👉 **[📥 Buka / Download File Panduan Lengkap (PDF)](./PanduanpenggunaanMikroTikHotspotMonitoring.pdf)**
 
 ---
 
