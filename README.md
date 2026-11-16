@@ -6,16 +6,24 @@ Pengembangan dan kustomisasi **Mikhmon V3 WS** beserta template **Hotspot Landin
 PASSWORD DEFAULT : username : admin password admin123
 
 ---
+## Preview Tampilan Aplikasi
 
+| Dashboard Utama & Live Traffic | Manajemen PPPoE Servers |
+| :---: | :---: |
+| <img src="mikhmon/assets/gambar1.png" alt="Dashboard Utama" width="100%" /> | <img src="mikhmon/assets/gambar2.png" alt="PPPoE Servers" width="100%" /> |
+
+| PPPoE Active & Tes ONT | Hotspot IP Bindings |
+| :---: | :---: |
+| <img src="mikhmon/assets/gambar3.png" alt="PPPoE Active" width="100%" /> | <img src="mikhmon/assets/gambar4.png" alt="IP Bindings" width="100%" /> |
 ## 📖 File Panduan Instalasi & Penggunaan
 
 Silakan baca atau unduh dokumen panduan lengkap mengenai cara instalasi, konfigurasi MikroTik, serta penggunaan fitur di bawah ini:
 
-👉 **[📥 Buka / Download File Panduan Lengkap (PDF)](./PanduanpenggunaanMikroTikHotspotMonitoring.pdf)**
+ **[ Buka / Download File Panduan Lengkap (PDF)](./PanduanpenggunaanMikroTikHotspotMonitoring.pdf)**
 
 ---
 
-## 🙏 Ucapan Terima Kasih
+## Ucapan Terima Kasih
 
 Terima kasih sebesar-besarnya kepada:
 * **Laksa19** selaku pengembang utama dan pencipta **MIKHMON v3** yang menjadi fondasi dasar dari proyek ini.
