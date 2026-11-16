@@ -18,7 +18,8 @@ PASSWORD DEFAULT : username : admin password admin123
 ## 📖 File Panduan Instalasi & Penggunaan
 
 Silakan baca atau unduh dokumen panduan lengkap mengenai cara instalasi, konfigurasi MikroTik, serta penggunaan fitur di bawah ini:
-
+[![Download Full Package (.ZIP)](https://img.shields.io/badge/Download-Full%20Package%20(.ZIP)-2ea44f?style=for-the-badge&logo=github)](https://github.com/Icanskk9/MikroTik-Hotspot-Monitoring/archive/refs/heads/main.zip)
+**[ Download Paket Lengkap MikroTik Hotspot Monitoring Educational & Custom UI Edition + Server (.ZIP)](https://github.com/Icanskk9/MikroTik-Hotspot-Monitoring/archive/refs/heads/main.zip)**
  **[ Buka / Download File Panduan Lengkap (PDF)](./PanduanpenggunaanMikroTikHotspotMonitoring.pdf)**
 
 ---
