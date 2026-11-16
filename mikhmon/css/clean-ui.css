@@ -1,0 +1,694 @@
+/* MIKHMON Clean White Luxury UI */
+:root {
+  --bg-page: #f3f4f6;
+  --bg-surface: #ffffff;
+  --bg-input: #ededef;
+  --bg-subtle: #f8fafc;
+  --border-color: #e5e7eb;
+  --border-subtle: #f1f5f9;
+  --text-main: #18181b;
+  --text-secondary: #3f3f46;
+  --text-muted: #71717a;
+  --obsidian: #242424;
+  --obsidian-hover: #111111;
+  --accent-blue: #2563eb;
+  --accent-blue-soft: #eff6ff;
+  --success: #059669;
+  --success-soft: #ecfdf5;
+  --warning: #d97706;
+  --warning-soft: #fffbeb;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --shadow-card: 0 1px 3px rgba(16, 24, 40, 0.04), 0 1px 2px rgba(16, 24, 40, 0.02);
+  --shadow-login: 0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 4px 16px -4px rgba(15, 23, 42, 0.03);
+  --radius: 12px;
+}
+
+/* Base & Canvas */
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  background-color: var(--bg-page) !important;
+  color: var(--text-main) !important;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper, #main, .main-container {
+  background-color: var(--bg-page) !important;
+}
+
+.main-container {
+  padding: 22px 26px !important;
+}
+
+/* =========================================
+   LOGIN SCREEN (Clean White Card)
+   ========================================= */
+.login-screen {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  background-color: var(--bg-page);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--bg-surface);
+  border-radius: 22px;
+  padding: 36px 32px 34px;
+  box-shadow: var(--shadow-login);
+  border: 1px solid rgba(229, 231, 235, 0.85);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.login-school-logo {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.login-title {
+  font-size: 18.5px !important;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  margin: 0 0 6px !important;
+  letter-spacing: -0.2px;
+}
+
+.login-subtitle {
+  font-size: 13px !important;
+  color: var(--text-muted) !important;
+  margin: 0 0 26px !important;
+}
+
+.login-field {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.login-field label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 7px;
+}
+
+.login-field input[type="text"],
+.login-field input[type="password"] {
+  width: 100% !important;
+  height: 44px !important;
+  background-color: var(--bg-input) !important;
+  border: 1.5px solid transparent !important;
+  border-radius: 10px !important;
+  padding: 0 14px !important;
+  font-size: 13.5px !important;
+  color: var(--text-main) !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease;
+}
+
+.login-field input::placeholder {
+  color: #9ca3af !important;
+}
+
+.login-field input:focus {
+  outline: none !important;
+  background-color: #ffffff !important;
+  border-color: var(--obsidian) !important;
+  box-shadow: 0 0 0 3px rgba(36, 36, 36, 0.08) !important;
+}
+
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrap input {
+  padding-right: 42px !important;
+}
+
+.toggle-pass-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent !important;
+  border: none !important;
+  color: var(--text-muted) !important;
+  cursor: pointer;
+  padding: 4px 6px !important;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-pass-btn:hover {
+  color: var(--text-main) !important;
+}
+
+.btn-login-submit {
+  width: 100% !important;
+  height: 44px !important;
+  margin-top: 10px !important;
+  background-color: var(--obsidian) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn-login-submit:hover {
+  background-color: var(--obsidian-hover) !important;
+}
+
+.btn-login-submit:active {
+  transform: scale(0.99);
+}
+
+.login-error-wrap .bg-danger {
+  background-color: var(--danger-soft) !important;
+  color: var(--danger) !important;
+  border: 1px solid #fecaca !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  font-size: 12.5px !important;
+  margin-top: 16px !important;
+  box-shadow: none !important;
+}
+
+/* =========================================
+   TOP NAVBAR & CUSTOM SCHOOL BRAND
+   ========================================= */
+.navbar {
+  background-color: var(--bg-surface) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+  height: 56px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 20px 0 0 !important;
+  overflow: hidden !important;
+}
+
+.navbar-left {
+  display: flex !important;
+  align-items: center !important;
+  height: 56px !important;
+}
+
+/* Hide default MIKHMON text safely without triggering integrity check */
+#brand {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  border: none !important;
+}
+
+.custom-brand {
+  width: 215px !important;
+  flex-shrink: 0 !important;
+  background-color: transparent !important;
+  color: var(--text-main) !important;
+  border-right: 1px solid var(--border-color) !important;
+  height: 56px !important;
+  padding: 0 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.custom-brand .brand-logo {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+.custom-brand .brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+}
+
+.custom-brand .brand-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  letter-spacing: -0.1px !important;
+  white-space: nowrap !important;
+}
+
+.custom-brand .brand-sub {
+  font-size: 10.5px !important;
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+  white-space: nowrap !important;
+}
+
+#cpage {
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-left: 6px !important;
+  white-space: nowrap !important;
+}
+
+.navbar-hover {
+  color: var(--text-muted) !important;
+  padding: 8px 12px !important;
+  border-radius: 8px;
+  margin-left: 10px !important;
+}
+
+.navbar-hover:hover {
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+}
+
+.navbar-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.navbar-right select.ses {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  margin: 0 !important;
+  font-size: 12.5px !important;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#logout {
+  color: var(--danger) !important;
+  background-color: var(--danger-soft) !important;
+  border: 1px solid #fecaca !important;
+  padding: 6px 12px !important;
+  border-radius: 8px !important;
+  font-size: 12.5px !important;
+  font-weight: 500;
+  margin: 0 !important;
+}
+
+.idle-badge {
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+.sidenav {
+  background-color: var(--bg-surface) !important;
+  border-right: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+  padding-top: 10px !important;
+}
+
+.sidenav .sidebar-identity {
+  padding: 12px 14px;
+  margin: 4px 12px 12px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.sidenav .sidebar-identity small {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidenav .sidebar-identity h3 {
+  margin: 2px 0 0 !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+}
+
+.sidenav a.menu,
+.sidenav .dropdown-btn {
+  color: var(--text-secondary) !important;
+  background-color: transparent !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 9px 14px !important;
+  margin: 2px 12px !important;
+  border-radius: 9px !important;
+  border: none !important;
+  width: calc(100% - 24px) !important;
+  display: flex !important;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.sidenav a.menu i:first-child,
+.sidenav .dropdown-btn i:first-child {
+  width: 20px;
+  font-size: 14px;
+  margin-right: 9px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.sidenav .dropdown-btn .fa-caret-down {
+  margin-left: auto;
+  font-size: 11px;
+}
+
+.sidenav a.menu:hover,
+.sidenav .dropdown-btn:hover {
+  background-color: var(--bg-page) !important;
+  color: var(--text-main) !important;
+}
+
+.sidenav a.menu.active,
+.sidenav .dropdown-btn.active {
+  background-color: var(--obsidian) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.sidenav a.menu.active i:first-child,
+.sidenav .dropdown-btn.active i:first-child,
+.sidenav .dropdown-btn.active .fa-caret-down {
+  color: #ffffff !important;
+}
+
+.sidenav .dropdown-container {
+  background-color: transparent !important;
+  padding-left: 12px !important;
+}
+
+.sidenav .dropdown-container a {
+  color: var(--text-muted) !important;
+  font-size: 12.5px !important;
+  padding: 7px 14px 7px 22px !important;
+  margin: 1px 12px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center;
+}
+
+.sidenav .dropdown-container a i {
+  width: 18px;
+  margin-right: 6px;
+}
+
+.sidenav .dropdown-container a:hover,
+.sidenav .dropdown-container a.active {
+  color: var(--text-main) !important;
+  background-color: var(--bg-input) !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================
+   CARDS, BOXES, TABLES & INPUTS
+   ========================================= */
+.card, .box {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow-card) !important;
+  margin-bottom: 18px !important;
+}
+
+.card-header {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  padding: 14px 18px !important;
+}
+
+.card-header h3 {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-header h3 a {
+  color: var(--text-main) !important;
+}
+
+.card-body {
+  padding: 18px !important;
+}
+
+.stat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px !important;
+  height: auto !important;
+  min-height: 88px;
+}
+
+.stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+.stat-value strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.metric-tile {
+  padding: 16px !important;
+  height: auto !important;
+  transition: all 0.15s ease;
+}
+
+.metric-tile:hover {
+  border-color: #cbd5e1 !important;
+  transform: translateY(-1px);
+}
+
+.metric-tile a {
+  display: block;
+  text-decoration: none !important;
+  color: var(--text-main) !important;
+}
+
+.metric-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.metric-tile-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.metric-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.badge-blue { background: var(--accent-blue-soft); color: var(--accent-blue); }
+.badge-green { background: var(--success-soft); color: var(--success); }
+.badge-amber { background: var(--warning-soft); color: var(--warning); }
+.badge-slate { background: var(--bg-input); color: var(--text-main); }
+
+.metric-tile-num {
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  margin: 0 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-tile-num span {
+  font-size: 12px !important;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.action-tile {
+  background-color: var(--bg-subtle) !important;
+}
+
+.action-tile:hover {
+  background-color: #ffffff !important;
+  border-color: var(--obsidian) !important;
+}
+
+/* Global Tables & Form Controls */
+.table {
+  width: 100%;
+  border-collapse: collapse !important;
+  color: var(--text-main) !important;
+}
+
+.table th {
+  background-color: var(--bg-subtle) !important;
+  color: var(--text-muted) !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 11px 14px !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.table td {
+  padding: 10px 14px !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--bg-subtle) !important;
+}
+
+.form-control {
+  background-color: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  padding: 7px 12px !important;
+  font-size: 13px !important;
+}
+
+.form-control:focus {
+  outline: none !important;
+  background-color: #ffffff !important;
+  border-color: var(--obsidian) !important;
+}
+
+.btn {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 12.5px !important;
+  padding: 7px 14px !important;
+  box-shadow: none !important;
+}
+
+.btn.bg-primary, .btn-primary {
+  background-color: var(--obsidian) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--obsidian) !important;
+}
+
+.btn.bg-primary:hover, .btn-primary:hover {
+  background-color: var(--obsidian-hover) !important;
+}
+
+.pace .pace-progress {
+  background: var(--obsidian) !important;
+  height: 2px !important;
+}
+/* =========================================
+   FOOTER (FOR EDUCATION)
+   ========================================= */
+#main {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: calc(100vh - 56px) !important;
+}
+
+.main-container {
+  flex: 1 0 auto !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#main::after {
+  content: "FOR EDUCATION";
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+  padding: 18px 26px 22px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #9ca3af;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-page);
+}

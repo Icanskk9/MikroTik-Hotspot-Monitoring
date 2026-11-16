@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Akses Internet Dibatasi — SMK Negeri 1 Siantar</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-canvas: #f3f3f1;
+      --bg-card: #ffffff;
+      --bg-subtle: #fafaf9;
+      --border-main: #e2e2dd;
+      --border-soft: #efefec;
+      --text-primary: #111113;
+      --text-secondary: #52525b;
+      --text-muted: #71717a;
+      --accent-dark: #18181b;
+      --accent-gold: #9a7b4f;
+      --status-bg: #fff1f2;
+      --status-border: #fecdd3;
+      --status-text: #9f1239;
+      --status-dot: #e11d48;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-primary);
+      background-color: var(--bg-canvas);
+      background-image: radial-gradient(#d4d4ce 0.85px, transparent 0.85px);
+      background-size: 20px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .frame-outer {
+      width: 100%;
+      max-width: 840px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid #dcdcd6;
+      border-radius: 16px;
+      box-shadow:
+        0 1px 2px rgba(17, 17, 19, 0.04),
+        0 22px 48px -20px rgba(17, 17, 19, 0.13);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-main);
+      border-radius: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Garis aksen tipis di sisi paling atas kartu */
+    .card::before {
+      content: "";
+      display: block;
+      height: 3px;
+      background: linear-gradient(90deg, #18181b 0%, #9a7b4f 50%, #18181b 100%);
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    /* Kolom Kiri: Info Utama & Metadata */
+    .col-main {
+      padding: 30px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .top-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--status-bg);
+      border: 1px solid var(--status-border);
+      color: var(--status-text);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--status-dot);
+    }
+
+    .title {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .notice-panel {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-main);
+      border-left: 3px solid var(--status-dot);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .notice-panel strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .meta-box {
+      border: 1px solid var(--border-main);
+      border-radius: 9px;
+      overflow: hidden;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      font-size: 12.5px;
+      border-bottom: 1px solid var(--border-soft);
+      background: #ffffff;
+    }
+
+    .meta-row:last-child {
+      border-bottom: none;
+    }
+
+    .meta-row:nth-child(even) {
+      background: var(--bg-subtle);
+    }
+
+    .meta-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .meta-value {
+      color: var(--text-primary);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Kolom Kanan: Prosedur & Tombol Aksi */
+    .col-side {
+      padding: 30px 30px;
+      background: var(--bg-subtle);
+      border-left: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .steps-heading {
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 0 0 14px 0;
+    }
+
+    .step-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    .step-num {
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid var(--border-main);
+      color: var(--text-primary);
+      font-size: 11px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent-dark);
+      color: #ffffff;
+      border: 1px solid var(--accent-dark);
+    }
+
+    .btn-primary:hover {
+      background: #27272a;
+      border-color: #27272a;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text-primary);
+      border: 1px solid var(--border-main);
+    }
+
+    .btn-secondary:hover {
+      background: #f4f4f2;
+      border-color: #cfcfc9;
+    }
+
+    .card-footer {
+      padding: 13px 32px;
+      background: #ffffff;
+      border-top: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Responsif untuk layar HP */
+    @media (max-width: 740px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+      .col-main, .col-side {
+        padding: 22px 20px;
+      }
+      .col-side {
+        border-left: none;
+        border-top: 1px solid var(--border-soft);
+      }
+      .card-footer {
+        padding: 12px 20px;
+      }
+    }
+    /* Penyesuaian ekstra untuk layar HP kecil */
+    @media (max-width: 480px) {
+      body {
+        padding: 16px 12px;
+      }
+      .col-main, .col-side {
+        padding: 20px 18px;
+      }
+      .top-meta, .meta-row {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .title {
+        font-size: 18px;
+      }
+      .card-footer {
+        padding: 12px 18px;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame-outer">
+    <main class="card">
+      <div class="layout-grid">
+        <!-- Kolom Kiri -->
+        <div class="col-main">
+          <div>
+            <div class="top-meta">
+              <div class="eyebrow">SMK Negeri 1 Siantar</div>
+              <span class="status-pill">
+                <span class="status-dot"></span>
+                Terisolir
+              </span>
+            </div>
+            <h1 class="title">Pemberitahuan Status Jaringan</h1>
+          </div>
+
+          <div class="notice-panel">
+            <strong>Akses Internet Dibatasi.</strong> Jalur koneksi PPPoE pada perangkat ini sedang dalam status <strong>ISOLIR</strong> karena masa aktif layanan telah berakhir.
+          </div>
+
+          <div class="meta-box">
+            <div class="meta-row">
+              <span class="meta-label">Status Koneksi</span>
+              <span class="meta-value" style="color: #9f1239;">Suspended / Isolir</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Pengelola Jaringan</span>
+              <span class="meta-value">Tim Teknisi / Lab TKJ</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Kontak Admin</span>
+              <span class="meta-value mono">0812-3456-7890 (WA)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan -->
+        <aside class="col-side">
+          <div>
+            <h2 class="steps-heading">Prosedur Pemulihan Layanan</h2>
+            <ol class="step-list">
+              <li class="step-item">
+                <span class="step-num">1</span>
+                <span>Hubungi pengelola jaringan dengan menyertakan <strong>lokasi ruangan</strong> atau <strong>username PPPoE</strong> untuk konfirmasi aktivasi.</span>
+              </li>
+              <li class="step-item">
+                <span class="step-num">2</span>
+                <span>Setelah akun diaktifkan kembali, koneksi internet akan pulih otomatis dalam waktu <strong>5–10 detik</strong>.</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="actions">
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20mohon%20bantuan%20pembukaan%20isolir%20PPPoE." target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              Hubungi Admin via WhatsApp
+            </a>
+
+            <a href="http://neverssl.com" class="btn btn-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              Cek Ulang Status Koneksi
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="card-footer">
+        <span>PPPoE Network Control</span>
+        <span>For Education</span>
+      </footer>
+    </main>
+  </div>
+
+</body>
+</html>
